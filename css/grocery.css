@@ -1,0 +1,38 @@
+#header {
+    font-size: 24px;
+}
+
+body {
+    font-family: raleway, sans-serif;
+}
+
+.wrapper {
+    background: #bdeeff;
+}
+
+h1 {
+    font-family: spicy-rice, serif;
+    margin-left: 40px;
+    
+}
+
+button {
+    height: 53px;
+}
+
+#itemList {
+    margin-left: 40px;
+}
+
+.line {
+	margin: 20px;
+	border-bottom: 1px solid #000;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: gray;
+}

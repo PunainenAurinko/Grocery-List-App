@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MAD9014 Final</title>
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="themes/grocery-app.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src='http://use.edgefonts.net/raleway;spicy-rice.js'></script>
+    <link rel="stylesheet" href="css/grocery.css" />
+    
+</head>
+
+<body>
+<div data-role="page" data-theme="a" id="home">
+    <div data-role="header" id="header">
+        <h1>GROCERY LIST</h1>
+    </div>
+    <section class="wrapper">
+    <div class="line"></div>
+        <h1>Here are your iems:</h1>
+    <div id="bottom">
+        <div class="items">
+            <ol id="itemList"></ol>
+        </div>
+    </div>
+    <div class="line"></div>
+    </section>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <form action="#" name="myForm" id="myForm" method="post">
+                <ul>
+                    <li><input type="text" name="item" id="item" placeholder="enter your items"/></li>
+                    <li><button id="addItem">Add an Item</button></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="js/grocery.js"></script>
+    
+</body>
+</html>
+
