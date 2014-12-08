@@ -17,13 +17,19 @@ $(document).ready(function (ev){
             if (newItem !== ""){
             myList.push( newItem );
             }
-        localStorage.setItem("grocery-tonk0006", JSON.stringify(myList) );
+        localStorage.setItem( "grocery-tonk0006", JSON.stringify(myList) );
         //convert from Array to String.
         document.getElementById("myForm").reset();
         showList();
         return false;
     });
 });
+
+function markAsDone() {
+    $(this).toggleClass("strikethrough");
+    
+    localStorage.setItem( "grocery-tonk0006", JSON.stringify(myList) );
+}
 
 function removeItem(ev){
     //this.firstChild.nodeValue
@@ -36,7 +42,7 @@ function removeItem(ev){
         myList.splice(i, 1);
         }
     }
-    localStorage.setItem("grocery-tonk0006", JSON.stringify(myList) );
+    localStorage.setItem( "grocery-tonk0006", JSON.stringify(myList) );
     showList();
 }
 
@@ -46,12 +52,10 @@ function showList(){
     for(var i=0; i<myList.length; i++){
         var list = document.createElement("li");
         list.innerHTML = myList[i];
-    
+        
         output.appendChild(list);
-              
-        $(list).on("click", function(){
-            $(this).toggleClass("strikethrough");
-        });
+        
+        $(list).click(markAsDone);
         
         $(list).dblclick(removeItem);
     }
