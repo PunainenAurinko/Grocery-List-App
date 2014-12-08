@@ -23,21 +23,26 @@ $(document).ready(function (ev){
 });
 
 function markAsDone() {
-    if(localStorage["grocery-tonk0006"]){
+    //if(localStorage["grocery-tonk0006"]){
         $(this).toggleClass("strikethrough");
-    }
+    //}
+    
+       localStorage["grocery-tonk0006"] = $(this); 
+        //}
+    //window.localStorage.hasStrikethroughClass = true;
     if(localStorage["grocery-tonk0006"]){
         
         for (var i = 0; i<myList.length; i++) {
             var parts = myList[i].split(":");
-            if(localStorage["grocery-tonk0006"] == parts[1]){
-                localStorage["grocery-tonk0006"] = parts[0];
+            if(localStorage["grocery-tonk0006"] == parts[0]){
+                localStorage["grocery-tonk0006"] = parts[1];
                 }
-            localStorage["grocery-tonk0006"] = parts[1]
+            localStorage["grocery-tonk0006"] = parts[0]
             }
     }
     localStorage["grocery-tonk0006"] = JSON.stringify(myList);
-  
+    console.log(localStorage["grocery-tonk0006"]);
+    
 }
 
 function removeItem(ev){
