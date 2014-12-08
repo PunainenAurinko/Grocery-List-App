@@ -8,7 +8,7 @@ $(document).ready(function (ev){
         myList = JSON.parse(localStorage["grocery-tonk0006"]);
         //convert from String to Array
     }
-  
+    
     showList();
   
     $("#addItem").click(function(ev){
@@ -26,8 +26,13 @@ $(document).ready(function (ev){
 });
 
 function markAsDone() {
+    //if(localStorage["grocery-tonk0006"]){
     $(this).toggleClass("strikethrough");
-    
+    //}
+    //if(localStorage["grocery-tonk0006"]){
+    localStorage["grocery-tonk0006"] = $(this).hasClass("strikethrough"); 
+        //}
+    //window.localStorage.hasStrikethroughClass = true;
     localStorage["grocery-tonk0006"] = JSON.stringify(myList);
 }
 
