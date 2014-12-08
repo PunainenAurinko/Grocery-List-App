@@ -1,6 +1,5 @@
 var myList = [];
 
-
 $(document).ready(function (ev){
       
     if(localStorage["grocery-tonk0006"]){
@@ -13,6 +12,7 @@ $(document).ready(function (ev){
         ev.preventDefault();
         var newItem = document.querySelector("#item").value;
             if (newItem !== ""){
+                newItem = newItem + ":false";
             myList.push( newItem );
             }
         localStorage["grocery-tonk0006"] = JSON.stringify(myList);
@@ -23,32 +23,36 @@ $(document).ready(function (ev){
 });
 
 function markAsDone() {
-    //if(localStorage["grocery-tonk0006"]){
-        $(this).toggleClass("strikethrough");
-    //}
-    
-       localStorage["grocery-tonk0006"] = $(this); 
-        //}
-    //window.localStorage.hasStrikethroughClass = true;
+    $(this).toggleClass("strikethrough");
+    var selectedText = $(this).text();
     if(localStorage["grocery-tonk0006"]){
-        
         for (var i = 0; i<myList.length; i++) {
             var parts = myList[i].split(":");
-            if(localStorage["grocery-tonk0006"] == parts[0]){
-                localStorage["grocery-tonk0006"] = parts[1];
+            //console.log(myList[i] +" - "+ selectedText)
+            if(parts[0]==selectedText){
+                
+                if(parts[1]=="false") 
+                {
+                    parts[1]="true";
                 }
-            localStorage["grocery-tonk0006"] = parts[0]
+                else if(parts[1]=="true")
+                {
+                    parts[1]="false";
+                }
+                
+                myList[i] = parts[0]+":"+parts[1];
             }
+        }
     }
     localStorage["grocery-tonk0006"] = JSON.stringify(myList);
-    console.log(localStorage["grocery-tonk0006"]);
-    
+    //console.log(localStorage["grocery-tonk0006"]);
 }
 
 function removeItem(ev){
     var txt = ev.currentTarget.firstChild.nodeValue;
     for(var i=0; i<myList.length; i++){
-        if(myList[i] == txt){
+        var parts = myList[i].split(":");
+        if(parts[0] == txt){
         // found the match
         myList.splice(i, 1);
         }
@@ -62,8 +66,12 @@ function showList(){
     output.innerHTML = "";
     for(var i=0; i<myList.length; i++){
         var list = document.createElement("li");
-        list.innerHTML = myList[i];
+        var parts = myList[i].split(":");
+        list.innerHTML = parts[0];
         
+        if(parts[1]=="true"){
+            $(list).toggleClass("strikethrough");
+        }
         output.appendChild(list);
         
         $(list).click(markAsDone);
