@@ -55,9 +55,9 @@ function showList(){
         
         output.appendChild(list);
         
-        $(list).click(markAsDone);
+        $(list).tap(markAsDone);
         
-        $(list).dblclick(removeItem);
+        $(list).swiperight(removeItem);
     }
 }
 
