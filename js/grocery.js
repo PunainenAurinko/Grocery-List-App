@@ -2,11 +2,9 @@ var myList = [];
 
 
 $(document).ready(function (ev){
-    //this runs when the page loads
-  
+      
     if(localStorage["grocery-tonk0006"]){
         myList = JSON.parse(localStorage["grocery-tonk0006"]);
-        //convert from String to Array
     }
     
     showList();
@@ -18,7 +16,6 @@ $(document).ready(function (ev){
             myList.push( newItem );
             }
         localStorage["grocery-tonk0006"] = JSON.stringify(myList);
-        //convert from Array to String.
         document.querySelector("#myForm").reset();
         showList();
         return false;
@@ -26,24 +23,28 @@ $(document).ready(function (ev){
 });
 
 function markAsDone() {
-    //if(localStorage["grocery-tonk0006"]){
-    $(this).toggleClass("strikethrough");
-    //}
-    //if(localStorage["grocery-tonk0006"]){
-    localStorage["grocery-tonk0006"] = $(this).hasClass("strikethrough"); 
-        //}
-    //window.localStorage.hasStrikethroughClass = true;
+    if(localStorage["grocery-tonk0006"]){
+        $(this).toggleClass("strikethrough");
+    }
+    if(localStorage["grocery-tonk0006"]){
+        
+        for (var i = 0; i<myList.length; i++) {
+            var parts = myList[i].split(":");
+            if(localStorage["grocery-tonk0006"] == parts[1]){
+                localStorage["grocery-tonk0006"] = parts[0];
+                }
+            localStorage["grocery-tonk0006"] = parts[1]
+            }
+    }
     localStorage["grocery-tonk0006"] = JSON.stringify(myList);
+  
 }
 
 function removeItem(ev){
-    //this.firstChild.nodeValue
-    //ev.currentTarget.firstChild - the textNode inside the paragraph
-    //ev.currentTarget.firstChild.nodeValue - the text inside the textNode
     var txt = ev.currentTarget.firstChild.nodeValue;
     for(var i=0; i<myList.length; i++){
         if(myList[i] == txt){
-        //found the match
+        // found the match
         myList.splice(i, 1);
         }
     }
