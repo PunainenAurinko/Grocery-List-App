@@ -4,8 +4,8 @@ var myList = [];
 $(document).ready(function (ev){
     //this runs when the page loads
   
-    if(localStorage.getItem("grocery-tonk0006")){
-        myList = JSON.parse(localStorage.getItem("grocery-tonk0006"));
+    if(localStorage["grocery-tonk0006"]){
+        myList = JSON.parse(localStorage["grocery-tonk0006"]);
         //convert from String to Array
     }
   
@@ -17,7 +17,7 @@ $(document).ready(function (ev){
             if (newItem !== ""){
             myList.push( newItem );
             }
-        localStorage.setItem( "grocery-tonk0006", JSON.stringify(myList) );
+        localStorage["grocery-tonk0006"] = JSON.stringify(myList);
         //convert from Array to String.
         document.getElementById("myForm").reset();
         showList();
@@ -28,7 +28,7 @@ $(document).ready(function (ev){
 function markAsDone() {
     $(this).toggleClass("strikethrough");
     
-    localStorage.setItem( "grocery-tonk0006", JSON.stringify(myList) );
+    localStorage["grocery-tonk0006"] = JSON.stringify(myList);
 }
 
 function removeItem(ev){
@@ -42,7 +42,7 @@ function removeItem(ev){
         myList.splice(i, 1);
         }
     }
-    localStorage.setItem( "grocery-tonk0006", JSON.stringify(myList) );
+    localStorage["grocery-tonk0006"] = JSON.stringify(myList);
     showList();
 }
 
