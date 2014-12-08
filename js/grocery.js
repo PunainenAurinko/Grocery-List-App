@@ -13,13 +13,13 @@ $(document).ready(function (ev){
   
     $("#addItem").click(function(ev){
         ev.preventDefault();
-        var newItem = document.querySelector("#item").value;
+        var newItem = $("#item").value;
             if (newItem !== ""){
             myList.push( newItem );
             }
         localStorage["grocery-tonk0006"] = JSON.stringify(myList);
         //convert from Array to String.
-        document.getElementById("myForm").reset();
+        $("#myForm").reset();
         showList();
         return false;
     });
