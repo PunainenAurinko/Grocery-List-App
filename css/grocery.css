@@ -22,11 +22,12 @@ button {
 
 #itemList {
     margin-left: 40px;
+    font-weight: 700;
 }
 
 .line {
 	margin: 20px;
-	border-bottom: 1px solid #000;
+	border-bottom: 2px solid #000;
 	width: 80%;
 	margin-right: auto;
 	margin-left: auto;
