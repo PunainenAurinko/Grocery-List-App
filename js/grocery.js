@@ -28,7 +28,7 @@ function markAsDone() {
     if(localStorage["grocery-tonk0006"]){
         for (var i = 0; i<myList.length; i++) {
             var parts = myList[i].split(":");
-            //console.log(myList[i] +" - "+ selectedText)
+            
             if(parts[0]==selectedText){
                 
                 if(parts[1]=="false") 
