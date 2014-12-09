@@ -2,19 +2,14 @@
     font-size: 24px;
 }
 
-body {
-    font-family: syncopate, sans-serif;
-    line-height: 2.5;
-}
-
 .wrapper {
     background: #bdeeff;
 }
 
 h1 {
-    font-family: spicy-rice, serif;
+    font-family: unkempt, serif;
+    font-weight: 700;
     margin-left: 40px;
-    
 }
 
 button {
@@ -22,6 +17,9 @@ button {
 }
 
 #itemList {
+    font-family: walter-turncoat, sans-serif;
+    font-size: 24px;
+    line-height: 2;
     margin-left: 40px;
     font-weight: 700;
 }
@@ -29,7 +27,7 @@ button {
 .line {
 	margin: 20px;
 	border-bottom: 2px solid #000;
-	width: 80%;
+	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }
