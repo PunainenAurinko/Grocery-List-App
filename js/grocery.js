@@ -29,12 +29,12 @@ function markAsDone() {
         for (var i = 0; i < myList.length; i++) {
             var parts = myList[i].split(":");
             
-            if(parts[0] == selectedText) {
+            if(parts[0] === selectedText) {
                 
-                if(parts[1] == "true") {
+                if(parts[1] === "true") {
                     parts[1] = "false";
                 }
-                else if(parts[1] == "false") {
+                else if(parts[1] === "false") {
                     parts[1] = "true";
                 }
                 
@@ -65,7 +65,7 @@ function showList(){
         var parts = myList[i].split(":");
         list.innerHTML = parts[0];
         
-        if(parts[1] == "false") {
+        if(parts[1] === "false") {
             $(list).toggleClass("strikethrough");
         }
         output.appendChild(list);
