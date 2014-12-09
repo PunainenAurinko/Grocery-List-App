@@ -76,6 +76,7 @@ label.ui-btn {
 	font-weight: bold;
 	border-width: 1px;
 	border-style: solid;
+    margin-top: 10px;
 }
 .ui-btn {
 	text-decoration: none !important;
