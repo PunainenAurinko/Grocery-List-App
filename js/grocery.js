@@ -1,4 +1,8 @@
+    // Global Variable
+
 var myList = [];
+
+    // Initialize script
 
 $(document).ready(function(ev) {
       
@@ -7,6 +11,8 @@ $(document).ready(function(ev) {
     }
     
     showList();
+    
+    // Add items to list and local storage
   
     $("#addItem").click(function(ev) {
         ev.preventDefault();
@@ -21,6 +27,8 @@ $(document).ready(function(ev) {
         return false;
     });
 });
+
+    // Mark items as done (click/tap)
 
 function markAsDone() {
     $(this).toggleClass("strikethrough");
@@ -45,6 +53,8 @@ function markAsDone() {
     localStorage["grocery-tonk0006"] = JSON.stringify(myList);
 }
 
+     // Remove items from the list (double click/tap)
+
 function removeItem(ev){
     var txt = ev.currentTarget.firstChild.nodeValue;
     for(var i = 0; i < myList.length; i++){
@@ -56,6 +66,8 @@ function removeItem(ev){
     localStorage["grocery-tonk0006"] = JSON.stringify(myList);
     showList();
 }
+
+      // Show the list  
 
 function showList(){
     var output = document.querySelector("#itemList");
