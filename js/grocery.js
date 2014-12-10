@@ -5,7 +5,7 @@ var myList = [];
     // Initialize script
 
 $(document).ready(function(ev) {
-      
+          
     if(localStorage["grocery-tonk0006"]) {
         myList = JSON.parse(localStorage["grocery-tonk0006"]);
     }
@@ -82,9 +82,9 @@ function showList(){
         }
         output.appendChild(list);
         
-        $(list).click(markAsDone);
+        $(list).tap(markAsDone);
         
-        $(list).dblclick(removeItem);
+        $(list).taphold(removeItem);
     }
 }
 

@@ -1,5 +1,5 @@
 #header {
-    font-size: 24px;
+    font-size: 2.4rem;
     background: #cbe6a9;
 }
 
@@ -10,7 +10,8 @@
 h1 {
     font-family: unkempt, serif;
     font-weight: 700;
-    margin-left: 40px;
+    margin-left: 4rem;
+    font-size: 2rem;
 }
 
 button {
@@ -20,14 +21,15 @@ button {
 
 #itemList {
     font-family: walter-turncoat, sans-serif;
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 2;
-    margin-left: 40px;
+    margin-left: 4rem;
     font-weight: 700;
+    word-wrap: break-word;
 }
 
 .line {
-	margin: 20px;
+	margin: 2rem;
 	border-bottom: 1px solid #000;
 	width: 100%;
 	margin-right: auto;
@@ -38,3 +40,25 @@ button {
     text-decoration: line-through;
     color: gray;
 }
+
+.ui-title {
+    margin: 0.6rem 10% 0.8rem !important;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 15/10),
+       only screen and (min-device-pixel-ratio: 1.5) {
+       
+           [data-role=footer] { height: 8rem; }
+           
+           input { height: 8rem; font-size: 2.2rem; }
+           
+           li, h1 { font-size: 2.4rem; }
+           
+           .ui-input-text, .ui-input-search { margin: 0 }
+           
+           #addItem { height: 8rem; }
+                      
+           .ui-navbar li .ui-btn { font-size: 2.2rem; }
+            
+       }
